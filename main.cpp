@@ -10,16 +10,20 @@ int main(int argc, char**argv) {
 
 
     int currentValue = 0;
-    cout << "Oh almighty user";
+    int increment = 0;
+    cout << "Oh almighty user,number please! -> ";
     cin >> currentValue;
 
-    if (currentValue < 1) {
-        cout << "blah blah";
+    cout << "Add the increment...? ->";
+    cin >> increment;
 
-        pause();
-        return 0;
+    for (int i = 0; i < 10; ++i) {
+        cout << currentValue << " ";
+        currentValue += increment;
+
     }
 
+ cout << currentValue << ".\n";
     pause();
     return 0;
 }
