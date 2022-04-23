@@ -1,34 +1,36 @@
 #include <iostream>
 #include <math.h>
 #include <string>
-#define _USE_MATH_DEFINES
-
-using namespace std;
-void pause();
+#include <cmath>
 
 int main(int argc, char**argv) {
+    int totalCount = 0;
+    double heaviestWeight = 0;
+    int heaviestOrder = 0;
 
+    std::cout << "How many numbers? ->";
+    std::cin >> totalCount;
 
-    int currentValue = 0;
-    int increment = 0;
-    cout << "Oh almighty user,number please! -> ";
-    cin >> currentValue;
+    int i;
+    for ( i = 1; i <= totalCount; ++i) {
+        double current = 0;
+        std::cout << "Apple nr." << i << ", grams ->";
+        std::cin >> current;
 
-    cout << "Add the increment...? ->";
-    cin >> increment;
+        if (current < 0) {
+            break;
+        }
 
-    for (int i = 0; i < 10; ++i) {
-        cout << currentValue << " ";
-        currentValue += increment;
+        if (current > heaviestWeight) {
+            heaviestWeight = current;
+            heaviestOrder = i;
+        }
 
+        if (i > totalCount) {
+            std::cout << "The heaviest apple is" << heaviestOrder << "its order is" << heaviestWeight;
+        } else {
+            std::cout<< "The improper measurement found";
+        }
     }
 
- cout << currentValue << ".\n";
-    pause();
-    return 0;
-}
-
-void pause() {
-    cout << endl;
-    system("PAUSE");
 }
