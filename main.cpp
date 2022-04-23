@@ -4,33 +4,32 @@
 #include <cmath>
 
 int main(int argc, char**argv) {
-    int totalCount = 0;
-    double heaviestWeight = 0;
-    int heaviestOrder = 0;
+//    double currentNumber = 0;
+//    int numberTotal = 0;
+//    int totalPositive = 0;
+//
+//    std::cout << "How many numbers are there in total? ->" ;
+//    std::cin >> numberTotal;
+//
+//    for (int i = 1; i <= numberTotal; i++) {
+//        std::cout << "What would be current number?";
+//        std::cin >> currentNumber;
+//        if (currentNumber > 0) {
+//            totalPositive++;
+//        }
+//    }
+//    std::cout << "There were " << totalPositive << " positive numbers";
 
-    std::cout << "How many numbers? ->";
-    std::cin >> totalCount;
+    double currentNumber = 0;
+    int totalPositive = 0;
 
-    int i;
-    for ( i = 1; i <= totalCount; ++i) {
-        double current = 0;
-        std::cout << "Apple nr." << i << ", grams ->";
-        std::cin >> current;
-
-        if (current < 0) {
-            break;
+    do {
+        std::cout << "What is your number? ->" ;
+        std::cin >> currentNumber;
+        if (currentNumber > 0) {
+            totalPositive++;
         }
+    } while ( currentNumber != 0);
 
-        if (current > heaviestWeight) {
-            heaviestWeight = current;
-            heaviestOrder = i;
-        }
-
-        if (i > totalCount) {
-            std::cout << "The heaviest apple is" << heaviestOrder << "its order is" << heaviestWeight;
-        } else {
-            std::cout<< "The improper measurement found";
-        }
-    }
-
+    std::cout << "There were " << totalPositive << " positive numbers";
 }
